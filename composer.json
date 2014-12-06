@@ -1,6 +1,6 @@
 {
     "name": "popphp/pop-feed",
-    "description": "Pop Feed Component for Pop PHP Framework 2",
+    "description": "Pop Feed Component for Pop PHP Framework",
     "keywords": [
         "feed reader",
         "feed writer",
@@ -8,8 +8,7 @@
         "atom feeds",
         "php",
         "pop",
-        "pop php",
-        "pop php 2"
+        "pop php"
     ],
     "homepage": "http://www.popphp.org/",
     "license": "New BSD",
@@ -26,6 +25,11 @@
     "autoload": {
         "psr-4": {
             "Pop\\Feed\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
         }
     }
 }
