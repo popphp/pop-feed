@@ -325,11 +325,13 @@ class Writer
         $this->output = str_replace('[{charset}]', $this->charset, "<?xml version=\"1.0\" encoding=\"[{charset}]\"?>\n");
 
         if ($this->atom) {
-            $this->output .= '<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="' . (isset($this->headers['language']) ? $this->headers['language'] : 'en') . '">' . PHP_EOL;
+            $this->output .= '<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="' .
+                (isset($this->headers['language']) ? $this->headers['language'] : 'en') . '">' . PHP_EOL;
             $indent   = '    ';
             $itemNode = 'entry';
         } else {
-            $this->output .= '<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/">' . PHP_EOL;
+            $this->output .= '<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" ' .
+                'xmlns:wfw="http://wellformedweb.org/CommentAPI/">' . PHP_EOL;
             $this->output .= '    <channel>' . PHP_EOL;
             $indent   = '        ';
             $itemNode = 'item';
