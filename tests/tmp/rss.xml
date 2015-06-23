@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/">
+    <channel>
+        <title>Test Feed Title</title>
+        <subtitle>Test Feed Description</subtitle>
+        <link>http://www.testfeed.com/</link>
+        <language>en</language>
+        <updated>Tue, 12 Jan 2010 13:01:32 -0600</updated>
+        <generator>http://www.website.com/</generator>
+        <author>Some Editor</author>
+        <lastBuildDate>Tue, 12 Jan 2010 13:01:32 -0600</lastBuildDate>
+        <pubDate>Tue, 12 Jan 2010 13:01:32 -0600</pubDate>
+        <item>
+            <title>Entry Title 1</title>
+            <link>http://www.testfeed.com/entry1</link>
+            <comments>http://www.testfeed.com/entry1#comments</comments>
+            <author>Entry Author 1</author>
+            <updated>Wed, 13 Jan 2010 14:12:24 -0600</updated>
+            <summary>Entry Desc 1</summary>
+        </item>
+        <item>
+            <title>Entry Title 2</title>
+            <link>http://www.testfeed.com/entry2</link>
+            <comments>http://www.testfeed.com/entry2#comments</comments>
+            <author>Entry Author 2</author>
+            <updated>Tue, 12 Jan 2010 14:12:24 -0600</updated>
+            <summary>Entry Desc 2</summary>
+        </item>
+        <item>
+            <title>Entry Title 3</title>
+            <link>http://www.testfeed.com/entry3</link>
+            <comments>http://www.testfeed.com/entry3#comments</comments>
+            <author>Entry Author 3</author>
+            <updated>Mon, 11 Jan 2010 14:12:24 -0600</updated>
+            <summary>Entry Desc 3</summary>
+        </item>
+    </channel>
+</rss>

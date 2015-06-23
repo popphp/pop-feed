@@ -48,12 +48,12 @@ class Rss extends AbstractFormat
         }
 
         // Check for the date
+        $date = null;
         if (isset($this->obj->channel->lastBuildDate)) {
             $date = (string)$this->obj->channel->lastBuildDate;
-        } else if (isset($this->obj->channel->pubDate)) {
+        }
+        if (isset($this->obj->channel->pubDate)) {
             $date = (string)$this->obj->channel->pubDate;
-        } else {
-            $date = null;
         }
 
         // Get the main header info of the feed
@@ -77,10 +77,10 @@ class Rss extends AbstractFormat
      */
     public function parse()
     {
-        $items = [];
+        $items    = [];
         $itemObjs = (isset($this->obj->channel->item)) ? $this->obj->channel->item : $this->obj->item;
-        $count = count($itemObjs);
-        $limit = (($this->limit > 0) && ($this->limit <= $count)) ? $this->limit : $count;
+        $count    = count($itemObjs);
+        $limit    = (($this->limit > 0) && ($this->limit <= $count)) ? $this->limit : $count;
 
         for ($i = 0; $i < $limit; $i++) {
             $title = trim((string)$itemObjs[$i]->title);

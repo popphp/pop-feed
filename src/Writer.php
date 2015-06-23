@@ -137,11 +137,7 @@ class Writer
             throw new Exception('Error: The item array must not be empty.');
         }
 
-        if (is_array(array_values($item)[0])) {
-            throw new Exception('Error: The item array must not contain scalar values.');
-        }
-
-        $this->items = array_merge($this->items, $item);
+        $this->items[] = $item;
         return $this;
     }
 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Test Feed Title</title>
+    <subtitle>Test Feed Description</subtitle>
+    <link href="http://www.testfeed.com/" />
+    <updated>Tue, 12 Jan 2010 13:01:32 -0600</updated>
+    <generator>http://www.website.com/</generator>
+    <author>
+        <name>Some Editor</name>
+    </author>
+    <entry>
+        <title>Entry Title 1</title>
+        <link href="http://www.testfeed.com/entry1" />
+        <comments>http://www.testfeed.com/entry1#comments</comments>
+        <author>Entry Author 1</author>
+        <updated>Wed, 13 Jan 2010 14:12:24 -0600</updated>
+        <summary>Entry Desc 1</summary>
+    </entry>
+    <entry>
+        <title>Entry Title 2</title>
+        <link href="http://www.testfeed.com/entry2" />
+        <comments>http://www.testfeed.com/entry2#comments</comments>
+        <author>Entry Author 2</author>
+        <updated>Tue, 12 Jan 2010 14:12:24 -0600</updated>
+        <summary>Entry Desc 2</summary>
+    </entry>
+    <entry>
+        <title>Entry Title 3</title>
+        <link href="http://www.testfeed.com/entry3" />
+        <comments>http://www.testfeed.com/entry3#comments</comments>
+        <author>Entry Author 3</author>
+        <updated>Mon, 11 Jan 2010 14:12:24 -0600</updated>
+        <summary>Entry Desc 3</summary>
+    </entry>
+</feed>

@@ -41,6 +41,12 @@ abstract class AbstractFormat
     protected $url = null;
 
     /**
+     * File to parse
+     * @var string
+     */
+    protected $file = null;
+
+    /**
      * Parsed object
      * @var mixed
      */
@@ -98,10 +104,12 @@ abstract class AbstractFormat
     public function __construct($options, $limit = 0)
     {
         $this->options = $options;
-        $this->limit = $limit;
+        $this->limit   = $limit;
 
-        // Check is a valid URL was passed
-        if (is_array($options) && isset($options['url'])) {
+        // Check if file or URL was passed
+        if (is_array($options) && isset($options['file'])) {
+            $this->file = $options['file'];
+        } else if (is_array($options) && isset($options['url'])) {
             if ((substr($options['url'], 0, 7) == 'http://') || (substr($options['url'], 0, 8) == 'https://')) {
                 $this->url = $options['url'];
             }
@@ -111,24 +119,28 @@ abstract class AbstractFormat
             }
         }
 
-        if (null === $this->url) {
-            throw new Exception('Error: The URL option passed was not a valid URL.');
+        if ((null === $this->url) && (null === $this->file)) {
+            throw new Exception('Error: Neither a valid file or URL was passed.');
         }
 
-        // Set user agent
-        if (isset($_SERVER['HTTP_USER_AGENT'])) {
-            $this->contextOptions['http']['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
+        if (null !== $this->file) {
+            $this->source = file_get_contents($this->file);
+        } else {
+            // Set user agent
+            if (isset($_SERVER['HTTP_USER_AGENT'])) {
+                $this->contextOptions['http']['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
+            }
+
+            // Create stream context
+            $this->context = (is_array($options) && isset($options['context'])) ?
+                $options['context'] :
+                stream_context_create($this->contextOptions);
+
+            // Get the feed source
+            $this->source = (is_array($options) && isset($options['source'])) ?
+                $options['source'] :
+                file_get_contents($this->url, false, $this->context);
         }
-
-        // Create stream context
-        $this->context = (is_array($options) && isset($options['context'])) ?
-            $options['context'] :
-            stream_context_create($this->contextOptions);
-
-        // Get the feed source
-        $this->source = (is_array($options) && isset($options['source'])) ?
-            $options['source'] :
-            file_get_contents($this->url, false, $this->context);
 
         // If the object is already parsed and passed into the constructor
         if (is_array($options) && isset($options['object'])) {
@@ -187,6 +199,15 @@ abstract class AbstractFormat
     public function url()
     {
         return $this->url;
+    }
+    /**
+     * Get the file
+     *
+     * @return string
+     */
+    public function file()
+    {
+        return $this->file;
     }
 
     /**
