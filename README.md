@@ -54,7 +54,9 @@ Rendered as an RSS feed:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/">
+<rss version="2.0"
+    xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    xmlns:wfw="http://wellformedweb.org/CommentAPI/">
     <channel>
         <published>Tue, 21 Jul 2015 18:09:08 -0500</published>
         <author>Test Author</author>
