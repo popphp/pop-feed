@@ -1,6 +1,10 @@
 pop-feed
 ========
 
+END OF LIFE
+-----------
+The `pop-feed` component v2.1.0 is now end-of-life and will no longer be maintained.
+
 [![Build Status](https://travis-ci.org/popphp/pop-feed.svg?branch=master)](https://travis-ci.org/popphp/pop-feed)
 [![Coverage Status](http://cc.popphp.org/coverage.php?comp=pop-feed)](http://cc.popphp.org/pop-feed/)
 
